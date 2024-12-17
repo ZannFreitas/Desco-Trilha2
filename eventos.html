@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFM - Eventos</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="shortcut icon" href="Imagens/afm-clube-do-livro-logo.ico">
+
+<style>
+
+   
+
+    body{
+        background-color: rgb(203, 230, 203);
+    }
+
+    /* Estilos para a classe 'content' */ 
+    .content {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: rgb(149, 209, 149);
+        padding: 20px; /*Espaçamento interno para melhor legibilidade */
+    }
+
+    /* Estilos para o elemento h1 da classe 'content' */
+    .content h1 {
+        text-align: center;
+        font-style: italic; 
+        font-size: 30px;
+        color: black;
+        margin-bottom: 10px; /* Espaçamento inferior para a próxima linha */
+    }
+
+    .content p {
+        text-align: center;
+        font-size: 22px;
+
+    }
+
+    .content2 {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: rgb(183, 226, 183);
+        padding: 10px;
+        
+           
+    }
+
+   
+    .content2 p {
+        text-indent: 40px;
+        text-align: justify;
+        font-size: 18px;
+    }
+
+    .content2 h2 {
+        text-align: center;
+        font-style: italic;
+        font-size: 20px;
+        color: black;
+        margin-bottom: 0px;
+    }
+   
+.vote-titulo-botao {
+    position: relative;
+    bottom: 1px;
+    background-color: black;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    
+}
+
+.vote-titulo-botao:hover {
+    background-color: #0056b3;
+}
+    
+
+  
+</style>
+</head>
+<body class="sobre">
+      <!-- Conteúdo do cabeçalho - logo, menu, etc. -->
+
+    <header class="banner">
+
+        <img src="Imagens/AFM - clube-do-livro-logo.png" alt="Logotipo AFM Clube do Livro" class="logo">
+        
+        
+        <nav class="menu">
+        
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="sobre.html">Sobre</a></li>
+              <li><a href="a-leitura.html">A Leitura</a></li>
+              <li><a href="leitura-do-mes.html">Leitura do Mês</a></li>
+              <li><a href="eventos.html">Eventos</a></li>
+              <li><a href="livros.html">Livros</a></li>
+              <li><a href="objetivo.html">Objetivo</a></li>
+              <li><a href="resultado.html">Resultado</a></li>
+              <li><a href="faca-parte.html">Faça Parte</a></li>
+              <li><a href="local.html">Local</a></li>
+              <li><a href="contato.html">Contato</a></li>
+              <li><a href="enquete-resultado-pagina-oculta.html"></a></li>
+            </ul>
+          </nav>
+
+    </header>
+
+    <main class="content">
+
+        <h1>Escolha do Livro</h1>
+        <p>Mês de Julho</p>
+        <p>de 08 a 14 de julho de 2024</p>
+
+    </main>
+
+    <main class="content2">
+        <p>Aventureiros e aventureiras do nosso clube do livro. É chegada a hora de escolhermos um novo título para a leitura do mês de julho.</p>
+        <h2>Então, não deixem de participar de nossa enquete, votando no livro de sua preferência.</h2>
+        <p>Neste mês de julho, trraremos para vocês livros que foram adaptados para o cinema. Sim!! Muitos filmes que adoramos são baseados em livros, o que nos traz um colorido diferente a nossa leitura que transcende nossa imaginação.</p>
+        <p>Essa será uma boa oportunidade de verificarmos as diferentes perspectivas em relação à obra, a do autor e a do diretor do filme. Qual será a que nos agradará mais?</p>
+        <p>Bom, para ajudá-los nesta "difícil escolha", assistam também aos trailers dos filmes.</p>
+        <p>E depois é só votar.</p>
+    </main>
+
+    <div style="text-align: center;">
+        <button class="vote-titulo-botao">Vote em um título</button>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Linkando os botões nas páginas existentes à página oculta
+            document.querySelectorAll('.vote-titulo-botao').forEach(function(botao) {
+                botao.addEventListener('click', function() {
+                    window.location.href = 'enquete-resultado-pagina-oculta.html'; // Substitua pelo nome do arquivo da página oculta
+                });
+            });
+        });
+    </script>
+    
+
+    <footer>
+        <!--conteúdo do rodapé-->
+
+    <div class="footer-content">
+        <p>AFM - Clube do Livro</p>
+        <p>&copy; 2024 AFM - Clube do Livro. Todos os direitos reservados</p>
+        <p>Desenvolvido por Rosana Freitas</p>
+
+    </div>
+
+    </footer>
+
+</body>
+</html>

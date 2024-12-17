@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFM - Faça Parte</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="shortcut icon" href="Imagens/afm-clube-do-livro-logo.ico">
+
+    <style>
+        /* Geral */
+        body, html {
+          margin: 0;
+          padding: 0;
+          font-family: Arial, sans-serif;
+          color: #333;
+          background: url("Imagens/fundo-de-fundo-neutro.webp") no-repeat center center fixed;
+          background-size: cover;
+          min-height: 100vh;
+          overflow-x: hidden;
+        }
+    
+        .container {
+          position: relative;
+          z-index: 1;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+        }
+    
+        h1 {
+          text-align: center;
+          color: #fff;
+          margin: 40px 0;
+          font-size: 2.5rem;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+    
+        .section {
+          margin-bottom: 60px;
+          width: 100%;
+          background: rgba(255, 255, 255, 0.8);
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+    
+        .section h2 {
+          text-align: center;
+          color: #6200ea;
+          margin-bottom: 20px;
+          font-size: 1.8rem;
+        }
+    
+        .benefits, .rules {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px;
+        }
+    
+        .benefit-card, .rule-card {
+          background: #fff;
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+          padding: 20px;
+          text-align: center;
+          width: 350px;
+          min-height: 180px;
+        }
+    
+/* Formulário de inscrição */
+.form-section {
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+  border-left: 5px solid #6200ea;  /* Cor de destaque */
+}
+
+.form-section h2 {
+  text-align: center;
+  color: #6200ea;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-section input, .form-section select, .form-section textarea, .form-section button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.form-section button {
+  position: relative;
+  background-color: #6200ea;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-section button:hover {
+  transform: translateY(-5px); /* Efeito de flutuação */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+}
+
+.form-section button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg, 
+    transparent, 
+    rgba(255,255,255,0.3), 
+    transparent
+  );
+  transform: rotate(-45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.form-section button:hover::before {
+  opacity: 1;
+  transform: rotate(-45deg) translateX(50%);
+}
+
+.form-section button:active {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+/* Estilo para o quadro de preferências */
+#preferences {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.preference-item {
+  width: 45%;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.preference-item:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-5px); /* Efeito de flutuação */
+}
+
+.preference-item input {
+  margin-right: 10px;
+}
+
+.preference-item span {
+  color: #6200ea;
+  font-weight: 500;
+}
+
+
+        /* Ajuste para rodapé sempre no final */
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            flex: 1 0 auto; /* Permite crescimento e não encolhimento */
+        }
+
+        /* Estilo para botão Voltar ao Topo */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #6200ea;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#back-to-top:hover {
+    background-color: #3700b3;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+        footer {
+            flex-shrink: 0; /* Impede que o footer encolha */
+            text-align: center;
+            background-color: #a58484;
+            color: #fff;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        
+      </style>
+
+</head>
+
+<body class="sobre">
+      <!-- Conteúdo do cabeçalho - logo, menu, etc. -->
+
+    <header class="banner">
+
+        <img src="Imagens/AFM - clube-do-livro-logo.png" alt="Logotipo AFM Clube do Livro" class="logo">
+        
+        
+        <nav class="menu">
+        
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="sobre.html">Sobre</a></li>
+              <li><a href="a-leitura.html">A Leitura</a></li>
+              <li><a href="leitura-do-mes.html">Leitura do Mês</a></li>
+              <li><a href="eventos.html">Eventos</a></li>
+              <li><a href="livros.html">Livros</a></li>
+              <li><a href="objetivo.html">Objetivo</a></li>
+              <li><a href="resultado.html">Resultado</a></li>
+              <li><a href="faca-parte.html">Faça Parte</a></li>
+              <li><a href="local.html">Local</a></li>
+              <li><a href="contato.html">Contato</a></li>
+            </ul>
+          </nav>
+
+    </header>
+
+    <div class="container">
+        <h1>Faça Parte do Clube do Livro</h1>
+    
+        <!-- Benefícios -->
+        <section class="section benefits-section">
+          <h2>Benefícios de Ser Membro</h2>
+          <div class="benefits">
+            <div class="benefit-card">
+              <h3>📚 Sugestão de Livros pelos Membros</h3>
+              <p>Os membros do clube têm a oportunidade de sugerir livros, de acordo com suas preferências de gênero, autor e temas, tornando a escolha mais próxima das necessidades e gostos do grupo.</p>
+            </div>
+            <div class="benefit-card">
+              <h3>🌟 Descontos Exclusivos</h3>
+              <p>Participe de eventos e workshops com preços especiais.</p>
+            </div>
+            <div class="benefit-card">
+              <h3>🤝 Comunidade Literária</h3>
+              <p>Faça parte de um grupo apaixonado por leitura e aprendizado.</p>
+            </div>
+          </div>
+        </section>
+    
+        <!-- Regras -->
+        <section class="section rules-section">
+          <h2>Regras e Expectativas</h2>
+          <div class="rules">
+            <div class="rule-card">
+              <h3>Participação</h3>
+              <p>Esteja presente em discussões e reuniões mensais.</p>
+            </div>
+            <div class="rule-card">
+              <h3>Respeito</h3>
+              <p>Respeite as opiniões e ideias de outros membros.</p>
+            </div>
+            <div class="rule-card">
+              <h3>Sugestões</h3>
+              <p>Ajude a escolher livros e temas para as próximas leituras.</p>
+            </div>
+          </div>
+        </section>
+    
+        <!-- Formulário -->
+        <section class="form-section">
+            <h2>Inscreva-se Agora</h2>
+            <form id="form" onsubmit="return validateForm()">
+              <input type="text" id="name" name="name" placeholder="Nome Completo" required>
+              <input type="email" id="email" name="email" placeholder="E-mail" required>
+              <input type="tel" id="phone" name="phone" placeholder="Telefone">
+              
+              <label for="preferences">Preferências Literárias (Escolha quantos gêneros desejar):</label>
+              <div id="preferences">
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="romance"> <span>Romance</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="ficcao"> <span>Ficção</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="biografias"> <span>Biografias</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="fantasia"> <span>Fantasia</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="misterio"> <span>Mistério</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="thriller"> <span>Thriller</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="aventura"> <span>Aventura</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="historia"> <span>História</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="scifi"> <span>Ciência Ficção</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="poesia"> <span>Poesia</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="drama"> <span>Drama</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="horror"> <span>Horror</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="literatura_infantil"> <span>Literatura Infantil</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="contos"> <span>Contos</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="nao_ficcao"> <span>Não-Ficção</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="psicologia"> <span>Psicologia</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="filosofia"> <span>Filosofia</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="autodesenvolvimento"> <span>Autodesenvolvimento</span>
+                </div>
+                <div class="preference-item">
+                  <input type="checkbox" name="preferences" value="outros"> <span>Outros</span>
+                </div>
+              </div>
+          
+              <textarea name="message" rows="4" placeholder="Por que deseja participar?"></textarea>
+              <button type="submit">Enviar</button>
+          
+              <p id="error-message" class="error"></p>
+            </form>
+          </section>
+          
+          
+      </div>
+
+      <footer id="footer-participate">
+      <p>© 2024 AFM - Clube do Livro. Todos os direitos reservados. Desenvolvido por Rosana Freitas</p>
+      </footer>
+    
+      
+
+    </div>
+
+    <div id="back-to-top" class="show">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="19" x2="12" y2="5"></line>
+    <polyline points="5 12 12 5 19 12"></polyline>
+  </svg>
+</div>
+
+
+    <script>
+     function validateForm() {
+  // Pegando os valores dos campos do formulário
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var preferences = document.querySelectorAll('input[name="preferences"]:checked');
+  var message = document.querySelector('textarea[name="message"]').value;
+
+  // Limpando mensagens anteriores de erro
+  var errorMessageElement = document.getElementById("error-message");
+  errorMessageElement.textContent = "";
+
+  // Verificando se os campos obrigatórios estão preenchidos
+  if (name.trim() === "" || email.trim() === "") {
+    errorMessageElement.textContent = "Por favor, preencha todos os campos obrigatórios!";
+    return false;
+  }
+
+  // Verificando se o usuário selecionou ao menos uma preferência
+  if (preferences.length === 0) {
+    errorMessageElement.textContent = "Por favor, selecione ao menos uma preferência literária!";
+    return false;
+  }
+
+  // Verificando se o campo "Por que deseja participar?" está preenchido
+  if (message.trim() === "") {
+    errorMessageElement.textContent = "Por favor, diga por que deseja participar!";
+    return false;
+  }
+
+  // Se tudo estiver ok, mostra mensagem de sucesso
+  errorMessageElement.style.color = "green";
+  errorMessageElement.textContent = "Formulário enviado com sucesso!";
+
+  // Limpa o formulário
+  resetForm();
+
+  return false;  // Mantém o false para demonstração, sem envio real
+}
+
+function resetForm() {
+  // Limpa os campos de texto
+  document.getElementById("name").value = "";
+  document.getElementById("email").value = "";
+  document.querySelector('textarea[name="message"]').value = "";
+
+  // Desmarca todas as preferências selecionadas
+  var preferences = document.querySelectorAll('input[name="preferences"]:checked');
+  preferences.forEach(function(checkbox) {
+    checkbox.checked = false;
+  });
+}
+      </script>
+
+
+      
+<script>
+    // Função para voltar ao topo
+    document.addEventListener("DOMContentLoaded", function () {
+      const backToTopButton = document.getElementById("back-to-top");
+  
+      // Evento de clique no botão
+      backToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+          top: 0,         // Define o topo da página
+          behavior: "smooth", // Animação de rolagem suave
+        });
+      });
+  
+      // Mostra ou esconde o botão conforme a rolagem da página
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) { // Mostra o botão ao rolar 300px
+          backToTopButton.classList.add("show");
+        } else {
+          backToTopButton.classList.remove("show");
+        }
+      });
+    });
+  </script>
+  
+  
+
+
+      
+
+</body>
+</html>

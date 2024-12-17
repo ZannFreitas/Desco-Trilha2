@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquete-resultado</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="shortcut icon" href="Imagens/afm-clube-do-livro-logo.ico">
+
+    <style>
+
+          /* Estilo para o conteúdo */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+   
+        body {
+            background-color: #6200ea;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            background-color: #fff;
+            padding: 10px 0;
+            box-shadow: 4px 2px 4px , #6200ea;
+        }
+
+        .banner {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            padding: 0;
+            margin-top: 0;
+            position: relative;
+            align-items: center;
+            height: 50px;
+
+        }
+
+        .logo {
+            max-width: 100px;
+        }
+
+        nav {
+            margin-left: 70px;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            margin-left: 40px;
+            
+        }
+
+        .menu li {
+            display: inline;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #6200ea;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: rgb(243, 172, 172);
+            color: #fff;
+        }
+
+        .container-flex {
+            display: flex;
+            gap:20px;
+            margin: 20px 0;
+            padding: 40px;
+        }
+        
+
+        .enquete-container, .resultado-container {
+            background-color: #fff;
+            padding:20px;
+            border-radius: 8px;
+            box-shadow:0 0 10px rgba(0, 0, 0, 0.1) ;
+            max-width: 500px;
+            text-align: center;
+            flex: 1;
+        }
+
+        
+
+
+        h1, h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #6200ea;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3700b3;
+        }
+
+
+        footer {
+            width: 100%;
+        
+            padding: 20px;
+            margin-top: auto;
+        }
+
+
+    </style>
+</head>
+<body class="sobre">
+    <!--Conteúdo do cabeçalho - logo, menu, etc. -->
+
+    <header class="banner">
+
+        <img src="Imagens/AFM - clube-do-livro-logo.png" alt="Logotipo AFM Clube do Livro" class="logo">
+
+        <nav>
+
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="a-leitura.html">A Leitura</a></li>
+                <li><a href="leitura-do-mes.html">Leitura do Mês</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="livros.html">Livros</a></li>
+                <li><a href="objetivo.html">Objetivo</a></li>
+                <li><a href="trailers.html">Trailers</a></li>
+                <li><a href="resultado.html">Resultado</a></li>
+                <li><a href="faca-parte.html">Faça Parte</a></li>
+                <li><a href="local.html">Local</a></li>
+                <li><a href="contato.html">Contato</a></li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+
+<div class="container-flex">
+    <div class="enquete-container">
+        <h1>Vote em um título.</h1>
+
+        <p>Votação de 08 a 14 de julho de 2024.</p>
+        <p>Resultado em 18 de julho de 2024.</p>
+
+        <form id="enqueteForm">
+
+            <label>
+
+                <input type="checkbox" name="titulo" value="O Auto da Compadecida">
+                O Auto da Compadecida 
+            </label><br>
+
+            <label>
+
+                <input type="checkbox" name="titulo" value="Orgulho e Preconceito">
+                Orgulho e Preconceito
+            </label><br>
+
+            <label>
+
+                <input type="checkbox" name="titulo" value="O Hobbit">
+                O Hobbit
+            </label><br>
+
+            <button type="submit">Votar</button>
+        </form>
+    </div>
+
+    <div class="resultado-container" id="resultadoContainer">
+        <h2>Resultado Final</h2>
+        <p>Total de Votantes: <span id="totalVotantes">0</span></p>
+        <p>O Auto da Compadecida: <span id="votosAuto">0</span></p>
+        <p>Orgulho e Preconceito: <span id="votosOrgulho">0</span></p>
+        <p>O Hobbit: <span id="votosHobbit">0</span></p>
+    </div>
+
+</div>
+    
+    <script>
+        document.getElementById('enqueteForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Incrementar contadores de votos
+            let totalVotantes = parseInt(document.getElementById('totalVotantes').innerText) + 1;
+            document.getElementById('totalVotantes').innerText = totalVotantes;
+
+            if (document.querySelector('input[value="O Auto da Compadecida"]').checked) {
+                let votosAuto = parseInt(document.getElementById('votosAuto').innerText) + 1;
+                document.getElementById('votosAuto').innerText = votosAuto;
+            }
+            if (document.querySelector('input[value="Orgulho e Preconceito"]').checked) {
+                let votosOrgulho = parseInt(document.getElementById('votosOrgulho').innerText) + 1;
+                document.getElementById('votosOrgulho').innerText = votosOrgulho;
+            }
+            if (document.querySelector('input[value="O Hobbit"]').checked) {
+                let votosHobbit = parseInt(document.getElementById('votosHobbit').innerText) + 1;
+                document.getElementById('votosHobbit').innerText = votosHobbit;
+            }
+
+            // Exibir mensagem de sucesso
+            alert('Votação realizada com sucesso!');
+            
+            // Limpar os checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
+                checkbox.checked = false;
+            });
+
+            // Exibir o container de resultados
+            document.getElementById('resultadoContainer').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+    <footer>
+        <!--conteúdo do rodapé-->
+
+    <div class="footer-content">
+        <p>AFM - Clube do Livro</p>
+        <p>&copy; 2024 AFM - Clube do Livro. Todos os direitos reservados</p>
+        <p>Desenvolvido por Rosana Freitas</p>
+
+    </div>
+
+    </footer>
+</body>
+</html>

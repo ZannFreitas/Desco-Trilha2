@@ -1,0 +1,327 @@
+/* Geral */
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+
+
+  .menu {
+    margin-left: 20px; /*alinha menu à direita */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+  }
+
+  .header-inicial { 
+    display: flex; /* cria um container flex */
+    align-items: center /*alinha verticalmente no centro */
+  }
+  .home .logo img {
+
+    float: left; /* alinha logotipo à esquerda */
+    width: 150px; /*define a largura */
+    height: auto; /* mantém a proporção original */
+  }
+
+  /* citação da home */
+  .home .flex-container p {
+    text-align: center;
+    margin-top: 120px;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+  }
+
+  .home .p {
+    font-size:large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+  }
+
+  /* footer */
+  footer {
+    background-color: #a58484;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+        
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /*espaço entre os itens */
+  }
+
+  .footer-content p {
+    margin: 0;
+  }
+
+  /* Estilo menu demais páginas */
+
+  body.sobre {
+    padding: 0px;
+    margin: 0;
+  }
+
+ .banner {
+    padding: 0;
+    margin-top: 0;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+ }
+
+ /* adiciona a imagem de fundo ao menu específico da página sobre */
+ .sobre .banner .menu {
+    background-image: url("Imagens/imagem-livros.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .banner .menu li {
+    display: inline-block;
+    margin: 0 10px;
+ }
+
+ .banner .menu li:hover {
+    background-color: rgb(243, 172, 172);
+    color: #fff;
+ }
+
+ .banner .menu a {
+    text-decoration: none;
+    color: #642e2e;
+    transition: color 0.5s ease;
+    
+ }
+
+ /* Estilo do logotipo no banner */
+
+ .sobre .banner .logo {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 100px;
+    height: 90px;
+ }
+
+
+
+
+/* Estilo do conteúdo */
+.sobre .content {
+    padding: 20px;
+}
+
+
+.p {
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(45deg, #f3ec78, #af4261);
+    padding: 10px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilos para os cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 2px;
+  padding: 2px;
+  width: 28%;
+  text-align: center;
+  font-size: 10px;
+}
+
+.card img {
+  max-width: 100%;
+  max-height: 120px; /* Define a altura máxima */
+  height: auto; /* Mantém a proporção */
+  border-radius: 4px;
+}
+
+
+.card h3 {
+  margin-top: 10px;
+  color: rgb(26, 61, 75);
+}
+
+.card a {
+  text-decoration: none;
+  color: rgb(26, 61, 75);
+  font-weight: bold;
+  transition: color 0.5s ease; transform: 0.5s ease; /*Adiciona a transição*/
+}
+
+.card a:hover {
+  text-decoration: underline;
+  color: rgb(14, 235, 205)!important; /*Cor de destaque no hover*/
+  transform: scale(1.05); /*Levemente maior no hover*/
+}
+
+
+/*Estilo para o botão da página oculta */
+.botao-oculto {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6200ea;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.botao-oculto:hover{
+  background-color: #3700b3;
+}
+
+
+/* Estilos para o menu dropdown, página Leitura do Mês */
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  position: relative;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  color: #333; /* Altere conforme necessário */
+}
+
+/* Dropdown principal */
+.menu .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff; /* Cor de fundo do dropdown */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para o dropdown */
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  position: relative;
+}
+
+.dropdown-menu li a {
+  padding: 8px 15px;
+  white-space: nowrap; /* Impede que o texto quebre */
+}
+
+/* Dropdown-right */
+.dropdown-right {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%; /* Faz o dropdown abrir à direita */
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.dropdown-menu li:hover .dropdown-right {
+  display: block;
+}
+
+/* Efeitos de hover */
+.menu ul li a:hover {
+  background-color: #f0f0f0; /* Cor ao passar o mouse */
+  color: #000;
+}
+
+/* Smartphones (até 600px) */
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .benefits, .rules {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefit-card, .rule-card {
+    width: 90%;
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .form-section {
+    width: 95%;
+    margin: 10px auto;
+  }
+
+  #preferences {
+    flex-direction: column;
+  }
+
+  .preference-item {
+    width: 100%;
+  }
+}
+
+/* Tablets (601px a 900px) */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .container {
+    padding: 15px;
+    max-width: 95%;
+  }
+
+  .benefits, .rules {
+    justify-content: space-around;
+  }
+
+  .benefit-card, .rule-card {
+    width: 40%;
+  }
+}
+
