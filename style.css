@@ -91,7 +91,7 @@ body, html {
 
  /* adiciona a imagem de fundo ao menu específico da página sobre */
  .sobre .banner .menu {
-    background-image: url("Imagens/imagem-livros.png");
+    background-image: url("imagem-livros.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
